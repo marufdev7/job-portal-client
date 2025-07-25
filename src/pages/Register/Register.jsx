@@ -11,13 +11,20 @@ const Register = () => {
         const password = form.password.value;
 
         console.log(email, password);
+        
+        const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{6,}$/;
+
+        if (!passwordRegex.test(password)) {
+            alert("Password must be at least 6 characters, contain one number and one special character.");
+            return;
+        }
     }
 
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center w-[400px] lg:text-left">
-                    <Lottie animationData={regLottieAnim}/>
+                    <Lottie animationData={regLottieAnim} />
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <h1 className=" mt-4 ml-8 text-5xl font-bold">Register Now</h1>
