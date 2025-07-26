@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Lottie from 'lottie-react';
 import regLottieAnim from '../../assets/lottie/register.json';
+import AuthContext from '../../context/AuthContext/AuthContext';
 
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext);
 
     const handleRegister = e => {
         e.preventDefault();
@@ -18,6 +21,13 @@ const Register = () => {
             alert("Password must be at least 6 characters, contain one number and one special character.");
             return;
         }
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(err => console.log(err));
     }
 
     return (
