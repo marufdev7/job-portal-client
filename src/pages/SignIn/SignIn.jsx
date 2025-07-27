@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Lottie from 'lottie-react';
-import regLottieAnim from '../../assets/lottie/register.json';
+import loginLottieAnim from '../../assets/lottie/Login.json';
+import AuthContext from '../../context/AuthContext/AuthContext';
 
 const SignIn = () => {
+
+    const { singInUser } = useContext(AuthContext);
 
     const handleSignIN = e => {
         e.preventDefault();
@@ -11,13 +14,21 @@ const SignIn = () => {
         const password = form.password.value;
 
         console.log(email, password);
+
+        singInUser(email, password)
+            .then(result => {
+                console.log('sign in', result.user);
+            })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center w-[400px] lg:text-left">
-                    <Lottie animationData={regLottieAnim} />
+                    <Lottie animationData={loginLottieAnim} />
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <h1 className=" mt-4 ml-8 text-5xl font-bold">Sign In</h1>
