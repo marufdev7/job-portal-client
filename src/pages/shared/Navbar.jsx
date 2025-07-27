@@ -11,7 +11,7 @@ const Navbar = () => {
                 console.log('Sign Out Successfully');
             })
             .catch(err => {
-            console.log(err);
+            console.error(err);
         })
     }
 
