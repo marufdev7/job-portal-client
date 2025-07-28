@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import google from '../../assets/job-icon/google.png'
+import AuthContext from '../../context/AuthContext/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
+    const { signInWithGoogle } = useContext(AuthContext);
+
     const handleGoogleLogin = () => {
-        
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
-    
+
     return (
         <div className='mt-6 mb-6'>
             <div className="divider">OR</div>

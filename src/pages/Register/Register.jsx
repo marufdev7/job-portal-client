@@ -3,6 +3,7 @@ import Lottie from 'lottie-react';
 import regLottieAnim from '../../assets/lottie/register.json';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import SocialLogin from '../shared/SocialLogin';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 
@@ -56,6 +57,7 @@ const Register = () => {
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
+                    <p className='text-center'>Already have an account? <Link className='underline font-semibold' to='/signin'> Sign In</Link></p>
                     <SocialLogin/>
                 </div>
             </div>
