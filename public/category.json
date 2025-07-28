@@ -1,0 +1,62 @@
+[
+    {
+        "id": "jc001",
+        "category": "Software Development",
+        "jobs_available": 1856,
+        "img": "/category-icon/software-development.png"
+    },
+    {
+        "id": "jc002",
+        "category": "Security Analyst",
+        "jobs_available": 254,
+        "img": "/category-icon/cyber-security.png"
+    },
+    {
+        "id": "jc003",
+        "category": "Machine Learning Engineer",
+        "jobs_available": 732,
+        "img": "/category-icon/machine-learning.png"
+    },
+    {
+        "id": "jc004",
+        "category": "Data Scientist",
+        "jobs_available": 589,
+        "img": "/category-icon/data-scientist.png"
+    },
+    {
+        "id": "jc005",
+        "category": "UI/UX Designer",
+        "jobs_available": 419,
+        "img": "/category-icon/designer.png"
+    },
+    {
+        "id": "jc006",
+        "category": "Cloud Engineer",
+        "jobs_available": 365,
+        "img": "/category-icon/cloud-development.png"
+    },
+    {
+        "id": "jc007",
+        "category": "DevOps Engineer",
+        "jobs_available": 281,
+        "img": "/category-icon/devops.png"
+    },
+    {
+        "id": "jc008",
+        "category": "Mobile App Developer",
+        "jobs_available": 198,
+        "img": "/category-icon/mobile-app-developer.png"
+    },
+    {
+        "id": "jc009",
+        "category": "Web Developer",
+        "jobs_available": 947,
+        "img": "/category-icon/web-developer.png"
+    },
+    {
+        "id": "jc010",
+        "category": "Systems Architect",
+        "jobs_available": 123,
+        "img": "/category-icon/systems.png"
+    }
+]

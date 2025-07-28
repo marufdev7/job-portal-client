@@ -3,7 +3,7 @@ import jobIcon from '../../assets/job-icon/job-application-1.png';
 
 const Footer = () => {
     return (
-        <footer className="footer bg-base-200 text-base-content p-10">
+        <footer className="footer bg-slate-200 text-base-content p-10">
             <aside>
                 <img src={jobIcon} alt="" />
                 <p>
