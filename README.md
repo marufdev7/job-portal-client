@@ -41,6 +41,27 @@ A modern and responsive job portal application built with React, Vite, and Tailw
 
 ## 📁 Project Structure
 
+job-portal-client/
+├── public/                   # Static files (e.g., favicon, lottie JSON)
+│
+├── src/
+│   ├── assets/               # Images, icons, and lottie animations
+│   ├── components/           # Reusable UI components (buttons, cards, etc.)
+│   ├── context/              # React context providers (auth, theme, etc.)
+│   ├── layouts/              # Shared layouts (e.g., Main layout with header/footer)
+│   ├── pages/                # Page-level components (Home, Jobs, Login, etc.)
+│   ├── routes/               # Route definitions and routers
+│   ├── App.jsx               # Main application component with routes
+│   └── main.jsx              # Entry point for React app
+│
+├── .eslintrc.js              # ESLint configuration
+├── index.html                # HTML template used by Vite
+├── package.json              # Project metadata and dependencies
+├── postcss.config.js         # PostCSS config for Tailwind
+├── tailwind.config.js        # Tailwind CSS configuration
+└── vite.config.js            # Vite build and dev server config
+
+
 ---
 
 ### 🔹 Backend:
