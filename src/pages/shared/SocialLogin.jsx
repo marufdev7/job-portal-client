@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import google from '../../assets/job-icon/google.png'
 import AuthContext from '../../context/AuthContext/AuthContext';
-import { useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
     const { signInWithGoogle } = useContext(AuthContext);

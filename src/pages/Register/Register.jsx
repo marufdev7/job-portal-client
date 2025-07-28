@@ -3,11 +3,15 @@ import Lottie from 'lottie-react';
 import regLottieAnim from '../../assets/lottie/register.json';
 import AuthContext from '../../context/AuthContext/AuthContext';
 import SocialLogin from '../shared/SocialLogin';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
 
     const handleRegister = e => {
         e.preventDefault();
@@ -28,6 +32,8 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset();
+                navigate(from, { replace: true });
             })
             .catch(err => console.log(err));
     }
@@ -58,7 +64,7 @@ const Register = () => {
                         </div>
                     </form>
                     <p className='text-center'>Already have an account? <Link className='underline font-semibold' to='/signin'> Sign In</Link></p>
-                    <SocialLogin/>
+                    <SocialLogin />
                 </div>
             </div>
         </div>
