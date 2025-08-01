@@ -13,8 +13,8 @@ const Category = () => {
     return (
         <div className='pt-8 pb-8'>
             <div className='text-center'>
-                <h1 className='text-4xl font-bold py-3'>Browse by category</h1>
-                <p className='text-slate-600 text-lg'>Find the job that's perfect for you. About 800+ new jobs everyday.</p>
+                <h1 className='text-4xl text-slate-700 font-bold py-3'>Browse by category</h1>
+                <h5 className='text-slate-600 text-xl'>Find the job that's perfect for you. About 800+ new jobs everyday.</h5>
             </div>
             <div className='grid grid-cols-2 lg:grid-cols-5 gap-4 p-3'>
                 {
