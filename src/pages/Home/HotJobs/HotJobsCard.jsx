@@ -1,3 +1,4 @@
+import { MapPin, Briefcase } from 'lucide-react';
 import React from 'react';
 
 const HotJobsCard = ({ job }) => {
@@ -15,6 +16,7 @@ const HotJobsCard = ({ job }) => {
                         <div>
                             <h2 className="font-semibold">{company}</h2>
                             <p className="text-xs text-gray-400 flex items-center gap-1">
+                                <MapPin className="w-4 h-4 text-gray-500" />
                                 {location}
                             </p>
                         </div>
@@ -25,25 +27,25 @@ const HotJobsCard = ({ job }) => {
                 </div>
 
                 <h3 className="hover:text-blue-500 cursor-pointer font-bold">{title}</h3>
-                <div className="flex items-center gap-4 text-sm text-gray-400">
-                    <span>{jobType}</span>
+                <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <Briefcase className="w-4 h-4 text-gray-500" />{jobType}
                 </div>
 
                 <p className="text-gray-600"> {description} </p>
 
-                <div className="flex gap-2 items-center">
+                <div className="flex flex-wrap gap-2 items-center">
                     {
-                        requirements.map(r => <p key={r} className='text-sm p-1 rounded-md text-center bg-slate-200 '>
+                        requirements.map(r => <p key={r} className='text-sm p-1 rounded-md text-center hover:text-blue-500 hover:shadow bg-slate-200 '>
                             {r}
                         </p>)
                     }
                 </div>
 
                 <div className="flex items-center justify-between pt-2">
-                    <p className="text-lg text-primary font-semibold">{salaryRange.min}-{ salaryRange.max}
-                        <span className="text-sm font-medium text-gray-400">/Mon</span>
+                    <p className="text-lg text-blue-500 font-semibold">{salaryRange.min}-{salaryRange.max}
+                        <span className="text-sm font-medium text-gray-400">{' '}{salaryRange.currency}/Mon</span>
                     </p>
-                    <button className="btn btn-sm btn-primary">Apply Now</button>
+                    <button className="bg-slate-300 btn hover:bg-blue-500 hover:text-white">Apply Now</button>
                 </div>
             </div>
         </div>
