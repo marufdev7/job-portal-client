@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import HotJobsCard from './HotJobsCard';
+
 
 const HotJobs = () => {
 
@@ -15,7 +17,11 @@ const HotJobs = () => {
             <h4>Search and connect with the right candidates faster.</h4>
             <div>
                 {
-                    
+                    jobs.map(job => <HotJobsCard
+                        key={job._id}
+                        job={job}
+                    />
+                    )
                 }
             </div>
         </div>
