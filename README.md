@@ -23,8 +23,8 @@ A modern and responsive job portal application built with React, Vite, and Tailw
 
 ### Tools:
 - 🎞️ [LottieFiles](https://lottiefiles.com/) — Animations
-- 🖼️ [Icons8](https://icons8.com/) — Icons
 - 🎯 [React Motion](https://github.com/chenglou/react-motion) — Animations
+- 🖼️ [Lucid](https://lucide.dev/icons/) — Icons
 
 ---
 
