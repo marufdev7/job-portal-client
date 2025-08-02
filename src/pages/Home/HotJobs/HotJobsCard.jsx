@@ -1,9 +1,10 @@
 import { MapPin, Briefcase } from 'lucide-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const HotJobsCard = ({ job }) => {
 
-    const { company, company_logo, title, description, jobType, requirements, salaryRange, location } = job;
+    const { company, company_logo, title, description, jobType, requirements, salaryRange, location, _id } = job;
 
     return (
         <div className="card bg-slate-100 hover:bg-slate-50 shadow-md hover:shadow-lg">
@@ -45,7 +46,8 @@ const HotJobsCard = ({ job }) => {
                     <p className="text-lg text-blue-500 font-semibold">{salaryRange.min}-{salaryRange.max}
                         <span className="text-sm font-medium text-gray-400">{' '}{salaryRange.currency}/Mon</span>
                     </p>
-                    <button className="bg-slate-300 btn hover:bg-blue-500 hover:text-white">Apply Now</button>
+                    <Link to={`/jobs/${_id}`} className="bg-slate-300 btn hover:bg-blue-500 hover:text-white">Apply Now</Link>
+
                 </div>
             </div>
         </div>
