@@ -18,7 +18,10 @@ const JobDetails = () => {
     return (
         <div>
             {/* <h1>Apply for {title} to become success in your life.</h1> */}
-            <h1 className='text-center font-semibold text-2xl text-gray-700'>Job details for {title}.</h1>
+            <div className='flex justify-between mt-4'>
+                <h1 className='text-center font-semibold text-2xl text-gray-700'>Job details for {title}.</h1>
+                <button className="btn bg-blue-500 text-slate-50 hover:text-slate-100 hover:bg-gradient-to-r from-blue-500 to-purple-500">Apply Now</button>
+            </div>
             <div className='md:flex gap-3'>
                 <div className='w-2/3 border rounded-md mt-5 mb-5 p-5 text-gray-600'>
                     <h2 className='text-xl font-semibold'>Employment Information</h2>

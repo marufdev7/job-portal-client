@@ -19,11 +19,11 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        console.log(email, password);
+        // console.log(email, password);
 
         singInUser(email, password)
             .then(result => {
-                console.log('sign in', result.user);
+                // console.log('sign in', result.user);
 
                 form.reset();
                 navigate(from, { replace: true });
