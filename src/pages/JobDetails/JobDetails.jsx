@@ -1,10 +1,9 @@
 import { BriefcaseBusiness, CircleDollarSign, ClockAlert, Factory, MapPin, SquareUserIcon } from 'lucide-react';
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const JobDetails = () => {
 
-    const { description, location, title, applicationDeadline, salaryRange, company, requirements, responsibilities, jobType, category, company_logo, hr_name, hr_email } = useLoaderData();
+    const {_id, description, location, title, applicationDeadline, salaryRange, company, requirements, responsibilities, jobType, category, company_logo, hr_name, hr_email } = useLoaderData();
 
     const jobInfo = [
         { icon: <BriefcaseBusiness color="#5C7CFA" className="w-5 h-5" />, label: "Job Category", text: category },
@@ -20,7 +19,9 @@ const JobDetails = () => {
             {/* <h1>Apply for {title} to become success in your life.</h1> */}
             <div className='flex justify-between mt-4'>
                 <h1 className='text-center font-semibold text-2xl text-gray-700'>Job details for {title}.</h1>
-                <button className="btn bg-blue-500 text-slate-50 hover:text-slate-100 hover:bg-gradient-to-r from-blue-500 to-purple-500">Apply Now</button>
+                <Link to={`/apply-job/${_id}`}>
+                    <button className="btn bg-blue-500 text-slate-50 hover:text-slate-100 hover:bg-gradient-to-r from-blue-500 to-purple-500">Apply Now</button>
+                </Link>
             </div>
             <div className='md:flex gap-3'>
                 <div className='w-2/3 border rounded-md mt-5 mb-5 p-5 text-gray-600'>
