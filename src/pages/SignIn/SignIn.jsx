@@ -61,8 +61,16 @@ const SignIn = () => {
                             <button className="btn btn-primary">Sign In</button>
                         </div>
                     </form>
-                    <p className='text-center'>New to Job Portal? <Link className='underline font-semibold' to='/register'>Register</Link></p>
-                    <SocialLogin/>
+                    <p className='text-center'>
+                        New to Job Portal?
+                        <Link
+                            className='underline font-semibold'
+                            to='/register'
+                            state={{ from: location.state?.from || { pathname: "/" } }}>
+                            Register
+                        </Link>
+                    </p>
+                    <SocialLogin />
                 </div>
             </div>
         </div>
