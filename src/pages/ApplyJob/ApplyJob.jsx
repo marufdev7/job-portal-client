@@ -1,11 +1,24 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const ApplyJob = () => {
 
+    const { id } = useParams();
+    // console.log(id);
 
+    const handleSubmitApplyJob = (e) => {
+        e.preventDefault();
+        const form = e.target;
 
-    const handleSubmit = () => {
-
+        const candidateData = {
+            name: form.name.value,
+            email: form.email.value,
+            number: form.number.value,
+            linkedin: form.linkedin.value,
+            description: form.description.value,
+            resume: form.resume.value
+        }
+        console.log(candidateData);
     }
 
     return (
@@ -18,24 +31,31 @@ const ApplyJob = () => {
                         <p className="text-sm text-gray-500">Please fill in your information and send it to the employer.</p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmitApplyJob} className="space-y-4">
                         <p>
                             <span>Name *</span>
-                            <input type="text" placeholder="Full Name" required className="input input-bordered w-full mt-1" />
+                            <input type="text" placeholder="Full Name" name='name' required className="input input-bordered w-full mt-1" />
                         </p>
                         <p>
                             <span>Email *</span>
-                            <input type="email" placeholder="Email" required className="input input-bordered w-full" />
+                            <input type="email" placeholder="Email" name='email' required className="input input-bordered w-full" />
                         </p>
                         <p>
                             <span>Number *</span>
-                            <input type="text" placeholder="Contact Number" required className="input input-bordered w-full" />
+                            <input type="text" placeholder="Contact Number" name='number' required className="input input-bordered w-full" />
                         </p>
                         <p>
-                            <span>Description *</span>
-                            <textarea placeholder="Description" className="textarea textarea-bordered w-full" />
+                            <span>LinkedIn *</span>
+                            <input type="url" placeholder="LinkedIn Url" name='linkedin' required className="input input-bordered w-full" />
                         </p>
-                        <input type="file" required className="file-input file-input-bordered w-full" />
+                        <p>
+                            <span>Description</span>
+                            <textarea placeholder="Description" name='description' className="textarea textarea-bordered w-full" />
+                        </p>
+                        <p>
+                            <span>Upload Resume *</span>
+                            <input type="file" required name='resume' className="file-input file-input-bordered w-full" />
+                        </p>
 
                         <div className="flex items-center gap-2">
                             <input type="checkbox" className="checkbox checkbox-sm" />
