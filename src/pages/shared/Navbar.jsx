@@ -18,7 +18,7 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/'>Item 2</NavLink></li>
+        <li className='px-3'><NavLink to='/my-application'>My Application</NavLink></li>
         <li><NavLink to='/'>Item 3</NavLink></li>
     </>
     return (
