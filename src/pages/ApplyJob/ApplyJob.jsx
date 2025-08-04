@@ -1,26 +1,48 @@
 import React from 'react';
+import Swal from 'sweetalert2';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const ApplyJob = () => {
 
     const { id } = useParams();
-    const {user} = useAuth();
-    console.log(id, user);
+    const { user } = useAuth();
+    // console.log(id, user);
 
     const handleSubmitApplyJob = (e) => {
         e.preventDefault();
         const form = e.target;
 
         const candidateData = {
-            name: form.name.value,
-            email: form.email.value,
-            number: form.number.value,
+            job_id: id,
+            applicant_name: form.name.value,
+            applicant_email: form.email.value,
+            applicant_number: form.number.value,
             linkedin: form.linkedin.value,
             description: form.description.value,
             resume: form.resume.value
         }
-        console.log(candidateData);
+        // console.log(candidateData);
+
+        fetch('http://localhost:3000/job-applications', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(candidateData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Application submitted successfully!'
+                    });
+                    form.reset();
+                }
+            })
     }
 
     return (
@@ -40,7 +62,7 @@ const ApplyJob = () => {
                         </p>
                         <p>
                             <span>Email *</span>
-                            <input type="email" placeholder="Email" name='email' required className="input input-bordered w-full" />
+                            <input type="email" placeholder="Email" name='email' defaultValue={user?.email} required className="input input-bordered w-full" />
                         </p>
                         <p>
                             <span>Number *</span>
