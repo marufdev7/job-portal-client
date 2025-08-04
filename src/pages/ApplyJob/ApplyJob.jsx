@@ -1,10 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const ApplyJob = () => {
 
     const { id } = useParams();
-    // console.log(id);
+    const {user} = useAuth();
+    console.log(id, user);
 
     const handleSubmitApplyJob = (e) => {
         e.preventDefault();
