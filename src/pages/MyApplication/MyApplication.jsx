@@ -1,11 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import MyApplicationDetails from './MyApplicationDetails';
+import Swal from 'sweetalert2';
 
 const MyApplication = () => {
 
     const { user } = useAuth();
     const [jobs, setJobs] = useState([]);
+
+    const handleDelete = id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3B82F6', // blue-500
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then(result => {
+            if (result.isConfirmed) {
+                // Proceed to delete logic
+                console.log('Deleted ID:', id);
+            }
+        });
+    };
 
     useEffect(() => {
         fetch(`http://localhost:3000/job-applications?email=${user.email}`)
@@ -21,6 +39,7 @@ const MyApplication = () => {
                     jobs.map(job => <MyApplicationDetails
                         key={job._id}
                         job={job}
+                        onDelete={handleDelete}
                     />)
                 }
             </div>

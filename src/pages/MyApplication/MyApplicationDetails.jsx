@@ -1,7 +1,8 @@
 import { BriefcaseBusiness, MapPin, Mail, Phone, Trash2 } from "lucide-react";
 
-const MyApplicationDetails = ({ job }) => {
+const MyApplicationDetails = ({ job, onDelete }) => {
     const {
+        _id,
         title,
         company,
         company_logo,
@@ -66,7 +67,7 @@ const MyApplicationDetails = ({ job }) => {
                         View Resume
                     </a>
                     <button
-                        // onClick={() => onDelete(_id)}
+                        onClick={() => onDelete(_id)}
                         className="w-full text-center bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 rounded-md flex items-center justify-center gap-2"
                     >
                         <Trash2 size={16} /> Delete
