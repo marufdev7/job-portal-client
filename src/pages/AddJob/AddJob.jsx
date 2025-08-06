@@ -12,11 +12,14 @@ const AddJob = () => {
         const formData = new FormData(form);
         const initialData = Object.fromEntries(formData.entries());
         const { salaryMin, salaryMax, currency, ...newJob } = initialData;
+        // console.log(typeof Number(salaryMax));
         newJob.salaryRange = {
             min: Number(salaryMin),
             max: Number(salaryMax),
             currency
         };
+        newJob.requirements = newJob.requirements.split('\n')
+        newJob.responsibilities = newJob.responsibilities.split('\n')
 
         console.log(newJob);
 
@@ -141,14 +144,14 @@ const AddJob = () => {
                     {/* job-requirement */}
                     <div>
                         <label className="label-text">Job Requirements</label>
-                        <textarea name="requirement" required placeholder='Each requirement in a new Line' className="textarea textarea-bordered w-full"></textarea>
+                        <textarea name="requirements" required placeholder='Each requirement in a new Line' className="textarea textarea-bordered w-full"></textarea>
                     </div>
 
                     {/* job-responsibility */}
                     <div>
                         <label className="label-text">Responsibilities</label>
                         <textarea
-                            name="responsibility"
+                            name="responsibilities"
                             required
                             placeholder="Each responsibility in a new line"
                             className="textarea textarea-bordered w-full"
