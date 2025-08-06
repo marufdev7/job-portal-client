@@ -14,13 +14,25 @@ const MyApplication = () => {
             text: "You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3B82F6', // blue-500
+            confirmButtonColor: '#3B82F6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         }).then(result => {
             if (result.isConfirmed) {
-                // Proceed to delete logic
-                console.log('Deleted ID:', id);
+                fetch(`http://localhost:3000/job-applications/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            setJobs(jobs.filter(job => job._id !== id));
+                            Swal.fire(
+                                'Deleted!',
+                                'Your application has been deleted.',
+                                'success'
+                            );
+                        }
+                    });
             }
         });
     };
