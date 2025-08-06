@@ -58,30 +58,30 @@ const ApplyJob = () => {
                     </div>
 
                     <form onSubmit={handleSubmitApplyJob} className="space-y-4">
-                        <p>
+                        <div>
                             <span>Name *</span>
                             <input type="text" placeholder="Full Name" name='name' required className="input input-bordered w-full mt-1" />
-                        </p>
-                        <p>
-                            <span>Email *</span>
+                        </div>
+                        <div>
+                            <label className='label-text'>Email *</label>
                             <input type="email" placeholder="Email" name='email' defaultValue={user?.email} required className="input input-bordered w-full" />
-                        </p>
-                        <p>
-                            <span>Number *</span>
+                        </div>
+                        <div>
+                            <label className='label-text'>Number *</label>
                             <input type="text" placeholder="Contact Number" name='number' required className="input input-bordered w-full" />
-                        </p>
-                        <p>
-                            <span>LinkedIn *</span>
+                        </div>
+                        <div>
+                            <label className='label-text'>LinkedIn *</label>
                             <input type="url" placeholder="LinkedIn Url" name='linkedin' required className="input input-bordered w-full" />
-                        </p>
-                        <p>
-                            <span>Description</span>
+                        </div>
+                        <div>
+                            <label className='label-text'>Description</label>
                             <textarea placeholder="Description" name='description' className="textarea textarea-bordered w-full" />
-                        </p>
-                        <p>
-                            <span>Upload Resume *</span>
+                        </div>
+                        <div>
+                            <label className='label-text'>Upload Resume *</label>
                             <input type="file" required name='resume' className="file-input file-input-bordered w-full" />
-                        </p>
+                        </div>
 
                         <div className="flex items-center gap-2">
                             <input type="checkbox" className="checkbox checkbox-sm" />

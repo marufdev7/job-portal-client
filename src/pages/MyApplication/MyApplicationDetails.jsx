@@ -17,7 +17,7 @@ const MyApplicationDetails = ({ job, onDelete }) => {
 
     return (
         <div className="p-4 rounded-xl">
-            <div className="bg-slate-50 p-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row items-start md:items-center gap-6">
+            <div className="bg-slate-100 hover:bg-slate-50 p-5 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row items-start md:items-center gap-6">
                 {/* Company Logo */}
                 <img
                     src={company_logo}
