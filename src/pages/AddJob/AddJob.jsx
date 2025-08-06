@@ -9,25 +9,36 @@ const AddJob = () => {
         e.preventDefault();
         const form = e.target;
 
-        const jobData = {
-            title: form.title.value,
-            company: form.company.value,
-            location: form.location.value,
-            jobType: form.jobType.value,
-            category: form.jobCategory.value,
-            salaryRange: {
-                min: Number(form.salaryMin.value),
-                max: Number(form.salaryMax.value),
-            },
-            // salary_min: form.salaryMin.value,
-            // salary_max: form.salaryMax.value,
-            applicationDeadline: form.deadline.value,
-            hr_name: form.hr_name.value,
-            hr_email: form.hr_email.value,
-            company_logo: form.logo.value,
+        const formData = new FormData(form);
+        const initialData = Object.fromEntries(formData.entries());
+        const { salaryMin, salaryMax, currency, ...newJob } = initialData;
+        newJob.salaryRange = {
+            min: Number(salaryMin),
+            max: Number(salaryMax),
+            currency
         };
 
-        console.log(jobData);
+        console.log(newJob);
+
+        // const jobData = {
+        //     title: form.title.value,
+        //     company: form.company.value,
+        //     location: form.location.value,
+        //     jobType: form.jobType.value,
+        //     category: form.jobCategory.value,
+        //     salaryRange: {
+        //         min: Number(form.salaryMin.value),
+        //         max: Number(form.salaryMax.value),
+        //     },
+        //     // salary_min: form.salaryMin.value,
+        //     // salary_max: form.salaryMax.value,
+        //     applicationDeadline: form.deadline.value,
+        //     hr_name: form.hr_name.value,
+        //     hr_email: form.hr_email.value,
+        //     company_logo: form.logo.value,
+        // };
+
+        // console.log(jobData);
 
         // fetch('http://localhost:3000/jobs', {
         //     method: 'POST',
@@ -107,7 +118,7 @@ const AddJob = () => {
                             <input type="number" name="salaryMin" placeholder="Salary Min" required className="input input-bordered w-full" />
                         </div>
                         <input type="number" name="salaryMax" placeholder="Salary Max" required className="input input-bordered w-full" />
-                        <select name="jobType" required className="select select-bordered w-full" defaultValue="">
+                        <select name="currency" required className="select select-bordered w-full" defaultValue="">
                             <option value="" disabled>Select currency</option>
                             <option>bdt</option>
                             <option>usd</option>
@@ -153,7 +164,7 @@ const AddJob = () => {
                         <label className="label-text">HR Email</label>
                         <input type="email" name="hr_email" placeholder="Email" required className="input input-bordered w-full" />
                     </div>
-                    
+
                     {/* company-logo */}
                     <div>
                         <label className="label-text">Company Logo</label>
