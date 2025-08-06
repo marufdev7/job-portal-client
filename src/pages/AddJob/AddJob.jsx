@@ -21,7 +21,7 @@ const AddJob = () => {
         newJob.requirements = newJob.requirements.split('\n')
         newJob.responsibilities = newJob.responsibilities.split('\n')
 
-        console.log(newJob);
+        // console.log(newJob);
 
         // const jobData = {
         //     title: form.title.value,
@@ -43,25 +43,25 @@ const AddJob = () => {
 
         // console.log(jobData);
 
-        // fetch('http://localhost:3000/jobs', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(jobData)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.insertedId) {
-        //             Swal.fire({
-        //                 icon: 'success',
-        //                 title: 'Success!',
-        //                 text: 'Job posted successfully!'
-        //             });
-        //             form.reset();
-        //             navigate('/');
-        //         }
-        //     });
+        fetch('http://localhost:3000/jobs', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newJob)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Job posted successfully!'
+                    });
+                    form.reset();
+                    // navigate('/');
+                }
+            });
     };
 
     return (
