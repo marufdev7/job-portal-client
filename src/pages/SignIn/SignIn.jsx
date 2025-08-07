@@ -70,7 +70,7 @@ const SignIn = () => {
                             Register
                         </Link>
                     </p>
-                    <SocialLogin />
+                    <SocialLogin from={from} />
                 </div>
             </div>
         </div>
