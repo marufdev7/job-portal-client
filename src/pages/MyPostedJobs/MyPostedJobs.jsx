@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 const MyPostedJobs = () => {
 
@@ -55,7 +56,12 @@ const MyPostedJobs = () => {
                                 </td>
                                 <td>{job.applicationDeadline}</td>
                                 <td>
-                                    <div  className="flex items-center gap-2">
+                                    <div className="flex items-center gap-2">
+                                        <Link to={`/view-applications/${job._id}`}>
+                                            <button className='btn btn-xs btn-link bg-green-700 text-gray-50 hover:bg-green-800'>
+                                                View Application
+                                            </button>
+                                        </Link>
                                         <button
                                             onClick={() => handleDelete(job._id)}
                                             className="btn btn-xs bg-red-500 text-white hover:bg-red-600"
