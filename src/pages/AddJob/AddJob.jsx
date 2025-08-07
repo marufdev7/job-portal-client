@@ -104,7 +104,7 @@ const AddJob = () => {
                     </select>
 
                     {/* job-category */}
-                    <select name="jobCategory" required className="select select-bordered w-full" defaultValue="">
+                    <select name="category" required className="select select-bordered w-full" defaultValue="">
                         <option value="" disabled>Select Job Category</option>
                         <option>Teaching</option>
                         <option>Engineering</option>
@@ -134,7 +134,7 @@ const AddJob = () => {
                     {/* job-deadline */}
                     <div>
                         <label className='label-text'>Deadline</label>
-                        <input type="date" name="deadline" required className="input input-bordered w-full" />
+                        <input type="date" name="applicationDeadline" required className="input input-bordered w-full" />
                     </div>
 
                     {/* job-description */}
@@ -173,7 +173,7 @@ const AddJob = () => {
                     {/* company-logo */}
                     <div>
                         <label className="label-text">Company Logo</label>
-                        <input type="url" name="logo" placeholder="Logo URL" required className="input input-bordered w-full" />
+                        <input type="url" name="company_logo" placeholder="Logo URL" required className="input input-bordered w-full" />
                     </div>
                     <button type="submit" className="btn bg-blue-500 text-white hover:bg-blue-600 hover:shadow-md w-full">Post Job</button>
                 </form>

@@ -24,7 +24,7 @@ const MyPostedJobs = () => {
 
             <div className="overflow-x-auto bg-white p-4 rounded-xl shadow-lg">
                 <table className="table table-zebra w-full">
-                    <thead className="bg-slate-200 text-slate-800">
+                    <thead className="bg-slate-200 itemc text-slate-800">
                         <tr>
                             <th>Logo</th>
                             <th>Title</th>
@@ -51,22 +51,23 @@ const MyPostedJobs = () => {
                                 <td>{job.location}</td>
                                 <td>{job.jobType}</td>
                                 <td>
-                                    ${job.salaryRange?.min} - ${job.salaryRange?.max}
+                                    {job.salaryRange?.currency} {job.salaryRange?.min} - {job.salaryRange?.max}
                                 </td>
-                                <td>{job.deadline}</td>
-                                <td className="flex gap-2">
-                                    <button
-                                        onClick={() => handleDelete(job._id)}
-                                        className="btn btn-xs bg-red-500 text-white hover:bg-red-600"
-                                    >
-                                        Delete
-                                    </button>
-                                    <button
-                                        onClick={() => console.log("Update", job._id)}
-                                        className="btn btn-xs bg-blue-500 text-white hover:bg-blue-600"
-                                    >
-                                        Update
-                                    </button>
+                                <td>{job.applicationDeadline}</td>
+                                <td>
+                                    <div  className="flex items-center gap-2">
+                                        <button
+                                            onClick={() => handleDelete(job._id)}
+                                            className="btn btn-xs bg-red-500 text-white hover:bg-red-600"
+                                        >
+                                            Delete
+                                        </button>
+                                        <button
+                                            className="btn btn-xs bg-blue-500 text-white hover:bg-blue-600"
+                                        >
+                                            Update
+                                        </button>
+                                    </div>
                                 </td>
                             </tr>
                         ))}
