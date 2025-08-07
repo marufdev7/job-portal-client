@@ -18,8 +18,9 @@ const Navbar = () => {
 
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li className='px-3'><NavLink to='/my-application'>My Application</NavLink></li>
+        <li className='px-2'><NavLink to='/my-application'>My Application</NavLink></li>
         <li><NavLink to='/add-job'>Add Job</NavLink></li>
+        <li className='px-2'><NavLink to='/my-posted-jobs'>Posted Jobs</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -41,7 +42,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 shadow">
                         {links}
                     </ul>
                 </div>
