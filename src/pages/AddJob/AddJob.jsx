@@ -61,7 +61,7 @@ const AddJob = () => {
                         text: 'Job posted successfully!'
                     });
                     form.reset();
-                    navigate('/my-posted-job');
+                    navigate('/my-posted-jobs');
                 }
             });
     };
