@@ -3,11 +3,13 @@ import useAuth from '../../hooks/useAuth';
 import MyApplicationDetails from './MyApplicationDetails';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const MyApplication = () => {
 
     const { user } = useAuth();
     const [jobs, setJobs] = useState([]);
+    const axiosSecure = useAxiosSecure();
 
     const handleDelete = id => {
         Swal.fire({
@@ -45,8 +47,13 @@ const MyApplication = () => {
 
         //with axios
 
-        axios.get(`http://localhost:3000/job-applications?email=${user.email}`, { withCredentials: true })
-            .then(res => setJobs(res.data))
+        // axios.get(`http://localhost:3000/job-applications?email=${user.email}`, { withCredentials: true })
+        //     .then(res => setJobs(res.data))
+
+        //with hooks
+
+        axiosSecure(`/job-applications?email=${user.email}`)
+        .then(res => setJobs(res.data))
 
     }, [user.email])
 
