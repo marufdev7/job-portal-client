@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
 import Lottie from 'lottie-react';
 import regLottieAnim from '../../assets/lottie/register.json';
-import AuthContext from '../../context/AuthContext/AuthContext';
 import SocialLogin from '../shared/SocialLogin';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 

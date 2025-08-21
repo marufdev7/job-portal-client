@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
 import Lottie from 'lottie-react';
 import loginLottieAnim from '../../assets/lottie/Login.json';
-import AuthContext from '../../context/AuthContext/AuthContext';
 import SocialLogin from '../shared/SocialLogin';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import useAuth from '../../hooks/useAuth';
 
 const SignIn = () => {
 
-    const { singInUser } = useContext(AuthContext);
+    const { singInUser } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -25,7 +23,7 @@ const SignIn = () => {
         singInUser(email, password)
             .then(result => {
                 // console.log('sign in', result.user.email);
-                
+
                 form.reset();
                 navigate(from, { replace: true });
             })
