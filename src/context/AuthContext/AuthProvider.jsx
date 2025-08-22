@@ -39,14 +39,14 @@ const AuthProvider = ({ children }) => {
 
             if (currentUser?.email) {
                 const user = { email: currentUser.email }
-                axios.post('http://localhost:3000/jwt', user, { withCredentials: true })
+                axios.post('https://job-portal-server-ten-pi.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
                         console.log('login', res.data);
                         setLoading(false);
                     })
             }
             else {
-                axios.post('http://localhost:3000/logout', {}, { withCredentials: true })
+                axios.post('https://job-portal-server-ten-pi.vercel.app/logout', {}, { withCredentials: true })
                     .then(res => {
                         console.log('logout', res.data)
                         setLoading(false);

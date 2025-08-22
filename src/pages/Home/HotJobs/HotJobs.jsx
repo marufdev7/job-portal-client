@@ -8,7 +8,7 @@ const HotJobs = () => {
     // console.log(jobs.length);
 
     useEffect(() => {
-        fetch('http://localhost:3000/jobs')
+        fetch('https://job-portal-server-ten-pi.vercel.app/jobs')
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [])

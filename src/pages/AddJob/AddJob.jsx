@@ -45,7 +45,7 @@ const AddJob = () => {
 
         // console.log(jobData);
 
-        fetch('http://localhost:3000/jobs', {
+        fetch('https://job-portal-server-ten-pi.vercel.app/jobs', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
