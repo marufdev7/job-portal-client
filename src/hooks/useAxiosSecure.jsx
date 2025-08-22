@@ -24,6 +24,7 @@ const useAxiosSecure = () => {
                     logOut()
                         .then(result => {
                             console.log('Sign Out Successfully');
+                            // redirect to the login page
                             navigate('/signin');
                         })
                         .catch(err => {
@@ -31,8 +32,7 @@ const useAxiosSecure = () => {
                         })
                 }
                 return Promise.reject(error)
-            }
-            ,)
+            })
     }, [])
     return axiosInstance;
 };
