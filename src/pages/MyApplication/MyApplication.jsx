@@ -59,7 +59,7 @@ const MyApplication = () => {
 
     return (
         <div>
-            <h1 className='text-center font-semibold text-2xl text-gray-700 m-5'>My applications</h1>
+            <h1 className='text-center text-4xl font-bold text-gray-700 m-5'>My applications</h1>
             <div className='space-y-6 px-4 pt-4 bg-slate-200'>
                 {
                     jobs.map(job => <MyApplicationDetails

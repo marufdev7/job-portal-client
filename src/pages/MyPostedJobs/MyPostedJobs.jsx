@@ -19,7 +19,7 @@ const MyPostedJobs = () => {
 
     return (
         <div className="min-h-screen bg-slate-100 p-4">
-            <h2 className="text-3xl font-bold text-center mb-6 text-slate-700">
+            <h2 className="text-4xl font-bold text-center mb-6 text-slate-700">
                 My Posted Jobs
             </h2>
 
